@@ -1,3 +1,10 @@
+@mixin alignment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @content;
+}
+
 *,
 *::after,
 *::before {
@@ -27,7 +34,7 @@ body {
 
 .calc-wrapper {
   width: 300px;
-  height: 300px;
+  height: 475px;
 }
 
 .row {
@@ -45,6 +52,7 @@ body {
   font-size: 30px;
   color: #ffffff;
   background-color: black;
+  outline: 1px solid #888888;
 }
 
 .button-wrapper {
@@ -54,13 +62,25 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 25px;
-  background-color: lightgray;
+  background-color: #e0e1e6;
   color: #6d6d6d;
-  border: 1px solid #888888;
+  outline: 1px solid #888888;
 }
 
 .operator  {
   background-color: rgb(255, 120, 24);
   color: #ffffff;
   font-weight: bold;
+}
+
+.clearBtn {
+  @include alignment() {
+    height: 75px;
+    width: 100%;
+    background-color: lightgray;
+    color: #6d6d6d;
+    font-weight: bold;
+    font-size: 25px;
+    outline: 1px solid #888888;
+  }
 }
